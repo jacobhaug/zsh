@@ -25,6 +25,9 @@ mv ducknorris.zsh-theme ~/.oh-my-zsh/custom/ducknorris.zsh-theme
 ## Change Terminal Fonts
 Inconsolata for Powerline @ 14 pt
 
+## Optionally install thefuck
+* Mac: brew install thefuck
+
 ## Optionally install iTerm Theme
 * https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
 
