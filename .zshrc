@@ -46,12 +46,28 @@ ZSH_THEME="ducknorris"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow git-extras osx sublime composer chucknorris common-aliases jira rails web-search sudo)
+plugins=(git git-flow git-extras osx sublime composer chucknorris common-aliases web-search sudo)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+POWERLINE_DETECT_SSH="true"
+POWERLINE_GIT_CLEAN="✔"
+POWERLINE_GIT_DIRTY="✘"
+POWERLINE_GIT_ADDED="%F{green}✚%F{black}"
+POWERLINE_GIT_MODIFIED="%F{blue}✹%F{black}"
+POWERLINE_GIT_DELETED="%F{red}✖%F{black}"
+POWERLINE_GIT_UNTRACKED="%F{yellow}✭%F{black}"
+POWERLINE_GIT_RENAMED="➜"
+POWERLINE_GIT_UNMERGED="═"
+
+alias zshconfig="s ~/.zshrc"
+alias ohmyzsh="s ~/.oh-my-zsh"
+alias gpall="git pushall"
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+
+COMPLETION_WAITING_DOTS="true"
+
+export PATH="/usr/local/git/bin:/sw/bin:/usr/local/bin:/usr/local:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/usr/local/bin:"
 
 source $ZSH/oh-my-zsh.sh
 
