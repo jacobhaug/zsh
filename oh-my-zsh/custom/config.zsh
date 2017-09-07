@@ -10,7 +10,7 @@
     alias wth="ps -uxa | more"
     alias findbig='find . -type f -exec ls -s {} \; | sort -n -r | head -5'
     alias ports='netstat -nape --inet'
-    alias ping='ping -c 4'
+    alias ping4='ping -c 4'
     alias ns='netstat -alnp --protocol=inet'
     alias ls='ls -aFG'
     alias la='ls -Al'
@@ -38,12 +38,15 @@
     alias h='cd ~'
     alias ~="cd ~"                              # ~:            Go Home
     alias c='clear'                             # c:            Clear terminal display
-    alias which='type -all'                     # which:        Find executables
+    #alias which='type -all'                     # which:        Find executables
     alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
     alias show_options='shopt'                  # Show_options: display bash options settings
     alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
     alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
-    mkcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
+    alias root='sudo su -'                      # root:         sudo to root user quickly
+    alias code='cd "/Users/jacob/Dropbox (Personal)/Code"'
+    mkcd () { mkdir -p "$1" && cd "$1"; }       # mcd:          Makes new Dir and jumps inside
+    unalias gcp 
 
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
@@ -172,6 +175,7 @@
     alias hosts='sudo vim /etc/hosts'
     certinfo () { openssl x509 -in "$1" -noout -text; }
     csr () { openssl req -new -newkey rsa:2048 -nodes -keyout "$1".key -out "$1".csr; }
+    cabundle() { cat "$1".crt > "$1"-bundle.crt && cat "$1".ca >> "$1"-bundle.crt}
 
 #   ii:  display useful host related informaton
 #   -------------------------------------------------------------------
@@ -225,5 +229,5 @@
     alias a:seed="php artisan migrate:refresh --seed"
     alias a:dump="php artisan dumpautoload"
 
-    alias test="clear && phpunit"
+    #alias test="clear && phpunit"
     alias redb="php artisan migrate:refresh && php artisan migrate --seed"
