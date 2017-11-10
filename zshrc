@@ -46,7 +46,8 @@ ZSH_THEME="ducknorris"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(gcp git git-flow git-extras osx sublime composer common-aliases web-search sudo extract)
-plugins=(gcp git git-flow git-extras osx common-aliases sudo extract)
+#plugins=(gcp git git-flow git-extras osx common-aliases sudo extract)
+plugins=(gcp git git-flow git-extras osx sudo extract)
 
 # User configuration
 
