@@ -67,7 +67,7 @@ alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 COMPLETION_WAITING_DOTS="true"
 
-export PATH="/Users/jacob/.npm-global/bin:/usr/local/git/bin:/sw/bin:/usr/local/bin:/usr/local:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/usr/local/bin:/Users/jacob/.composer/vendor/bin:/Users/jacob/.rvm/bin"
+export PATH="/Users/jacob/.npm-global/bin:/usr/local/git/bin:/sw/bin:/usr/local/bin:/usr/local:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/usr/local/bin:/Users/jacob/.composer/vendor/bin:/Users/jacob/.rvm/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,3 +101,6 @@ alias c='clear'
 if [ -f /usr/local/bin/google-cloud-sdk/path.zsh.inc ]; then
   source '/usr/local/bin/google-cloud-sdk/path.zsh.inc'
 fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
