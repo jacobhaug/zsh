@@ -45,8 +45,8 @@ ZSH_THEME="ducknorris"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gcp git git-flow git-extras osx sublime composer common-aliases web-search sudo extract)
 #plugins=(gcp git git-flow git-extras osx sublime composer common-aliases web-search sudo extract)
+plugins=(gcp git git-flow git-extras osx common-aliases sudo extract)
 
 # User configuration
 
@@ -101,6 +101,3 @@ alias c='clear'
 if [ -f /usr/local/bin/google-cloud-sdk/path.zsh.inc ]; then
   source '/usr/local/bin/google-cloud-sdk/path.zsh.inc'
 fi
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
