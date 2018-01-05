@@ -45,8 +45,9 @@ ZSH_THEME="ducknorris"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gcp git git-flow git-extras osx sublime composer common-aliases web-search sudo extract)
 #plugins=(gcp git git-flow git-extras osx sublime composer common-aliases web-search sudo extract)
+#plugins=(gcp git git-flow git-extras osx common-aliases sudo extract)
+plugins=(gcp git git-flow git-extras osx sudo extract)
 
 # User configuration
 
@@ -67,7 +68,7 @@ alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 COMPLETION_WAITING_DOTS="true"
 
-export PATH="/Users/jacob/.npm-global/bin:/usr/local/git/bin:/sw/bin:/usr/local/bin:/usr/local:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/usr/local/bin:/Users/jacob/.composer/vendor/bin:/Users/jacob/.rvm/bin"
+export PATH="/Users/jacob/.npm-global/bin:/usr/local/git/bin:/sw/bin:/usr/local/bin:/usr/local:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/usr/local/bin:/Users/jacob/.composer/vendor/bin:/Users/jacob/.rvm/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
