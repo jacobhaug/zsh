@@ -46,6 +46,7 @@
     alias root='sudo su -'                      # root:         sudo to root user quickly
     alias code='cd "/Users/jacob/Dropbox (Personal)/Code"'
     mkcd () { mkdir -p "$1" && cd "$1"; }       # mcd:          Makes new Dir and jumps inside
+    pms () { gaa && gcmsg "pms" && gp; }
     unalias gcp 
 
 #   lr:  Full Recursive Directory Listing
