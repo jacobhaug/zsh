@@ -47,6 +47,7 @@
     alias code='cd "/Users/jacob/Dropbox (Personal)/Code"'
     mkcd () { mkdir -p "$1" && cd "$1"; }       # mcd:          Makes new Dir and jumps inside
     pms () { gaa && gcmsg "pms" && gp; }
+    gpe () { git commit --allow-empty -m "Trigger push"; }
     unalias gcp 
 
 #   lr:  Full Recursive Directory Listing
