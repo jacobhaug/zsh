@@ -31,6 +31,9 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 
 ZSH_DISABLE_COMPFIX=true
 
+# ZSH Auto Suggestions
+echo ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=\'fg=60\' >> $ZSH_CUSTOM/zsh-autosuggestions_custom.zsh
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
