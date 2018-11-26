@@ -138,9 +138,13 @@ if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile;
 fi
 
+# Google Cloud
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jacob/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jacob/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jacob/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jacob/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Node / Composer / RVM
+export PATH="/usr/local/bin:/Users/jacob/.npm-global/bin:/Users/jacob/.composer/vendor/bin:/Users/jacob/.rvm/bin:$PATH"
