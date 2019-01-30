@@ -1,9 +1,5 @@
-#------------------------------------------////
-# Aliases:
-#------------------------------------------////
-
 #   -----------------------------
-#   2.  MAKE TERMINAL BETTER
+#   MAKE TERMINAL BETTER
 #   -----------------------------
 
     alias wtf="watch -n 1 w -hs"
@@ -43,12 +39,9 @@
     alias show_options='shopt'                  # Show_options: display bash options settings
     alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
     alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
-    alias root='sudo su -'                      # root:         sudo to root user quickly
-    alias code='cd "/Users/jacob/Dropbox (Personal)/Code"'
     mkcd () { mkdir -p "$1" && cd "$1"; }       # mcd:          Makes new Dir and jumps inside
-    pms () { gaa && gcmsg "pms" && gp; }
-    gpe () { git commit --allow-empty -m "Trigger push"; }
-    unalias gcp 
+
+
 
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
@@ -67,7 +60,7 @@
 
 
 #   -------------------------------
-#   3.  FILE AND FOLDER MANAGEMENT
+#   FILE AND FOLDER MANAGEMENT
 #   -------------------------------
 
     zipf () { zip -r "$1".zip "$1" ; }          # zipf:         To create a ZIP archive of a folder
@@ -101,20 +94,14 @@
 
 #   encrypt:  Encrypt given file/directory
 #   ---------------------------------------------------------
-    encrypt ()
-    {
-    gpg -ac --no-options "$1"
-    }
+    encrypt () { gpg -ac --no-options "$1" }
 
 #   decrypt:  Decrypt give file/directory
 #   ---------------------------------------------------------
-    decrypt ()
-    {
-    gpg --no-options "$1"
-    }
+    decrypt () { gpg --no-options "$1" }
 
 #   ---------------------------
-#   4.  SEARCHING
+#   SEARCHING
 #   ---------------------------
 
     alias qfind="find . -name "                 # qfind:    Quickly search for file
@@ -124,7 +111,7 @@
 
 
 #   ---------------------------
-#   5.  PROCESS MANAGEMENT
+#   PROCESS MANAGEMENT
 #   ---------------------------
 
 #   findPid: find out the pid of a specified process
@@ -161,7 +148,7 @@
 
 
 #   ---------------------------
-#   6.  NETWORKING
+#   NETWORKING
 #   ---------------------------
 
     alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
@@ -175,9 +162,6 @@
     alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
     alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
     alias hosts='sudo vim /etc/hosts'
-    certinfo () { openssl x509 -in "$1" -noout -text; }
-    csr () { openssl req -new -newkey rsa:2048 -nodes -keyout "$1".key -out "$1".csr; }
-    cabundle() { cat "$1".crt > "$1"-bundle.crt && cat "$1".ca >> "$1"-bundle.crt}
 
 #   ii:  display useful host related informaton
 #   -------------------------------------------------------------------
@@ -195,7 +179,7 @@
 
 
 #   ---------------------------------------
-#   7.  SYSTEMS OPERATIONS & INFORMATION
+#   SYSTEMS OPERATIONS & INFORMATION
 #   ---------------------------------------
     alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when booted into single-user
 
@@ -204,32 +188,81 @@
     alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 
 #   ---------------------------------------
-#   8.  Vagrant
+#   SYSTEM ADMINISTRATION
 #   ---------------------------------------
-    alias v='vagrant version && vagrant global-status'
-    alias vstatus='vagrant status'
-    alias vup='vagrant up'
-    alias vhalt='vagrant halt'
-    alias vssh='vagrant ssh'
-    alias vdown='vagrant destroy'
+    alias root='sudo su -'
+    alias suroot='sudo -E -s'
+    unalias gcp
+    
+    # SSL Management
+    certinfo () { openssl x509 -in "$1" -noout -text; }
+    csr () { openssl req -new -newkey rsa:2048 -nodes -keyout "$1".key -out "$1".csr; }
+    cabundle() { cat "$1".crt > "$1"-bundle.crt && cat "$1".ca >> "$1"-bundle.crt}
 
-    alias hedit="homestead edit"
-    alias hup="homestead up"
-    alias hhalt="homestead halt"
-    alias hssh="homestead ssh"
-    alias hdu="homestead destroy && homestead up"
+#   ---------------------------------------
+#   DEVELOPMENT ALIASES
+#   ---------------------------------------
 
-    alias c:update="composer update"
-    alias c:install="composer install"
-    alias c:dump="composer dump-autoload -o"
+    # General
+    alias code='cd "{ $code_path }"'
+    pms () { gaa && gcmsg "pms" && gp; }
+    gpe () { git commit --allow-empty -m "Trigger push"; }
 
+    # Brew Aliases
+    alias brew:services="brew services list"
+    alias brew:start="brew services start"
+    alias brew:stop="brew services stop"
+
+    # Artisan Aliases
+    alias pa="php artisan"
+    alias art="php artisan"
     alias artisan="php artisan"
-    alias a:routes="php artisan routes"
-    alias a:migrate="php artisan migrate"
-    alias a:fresh="php artisan migrate:refresh"
-    alias a:roll="php artisan migrate:rollback"
-    alias a:seed="php artisan migrate:refresh --seed"
-    alias a:dump="php artisan dumpautoload"
+    alias par="php artisan routes"
+    alias pda="php artisan dumpautoload"
+    alias ptest="clear && phpunit"
 
-    #alias test="clear && phpunit"
+    # Artisan Migration Aliases
+    alias migrate="php artisan migrate"
     alias redb="php artisan migrate:refresh && php artisan migrate --seed"
+    alias pam="php artisan migrate"
+    alias pam:r="php artisan migrate:refresh"
+    alias pam:roll="php artisan migrate:rollback"
+    alias pam:rs="php artisan migrate:refresh --seed"
+
+    # Artisan Deploy Helpers
+    alias pac="php artisan route:cache && php artisan config:cache && php artisan optimize"
+    alias paclear="php artisan route:clear && php artisan config:clear && php artisan clear-compiled && php artisan view:clear"
+
+    # Composer Aliases
+    alias ci="composer install"
+    alias cu="composer update"
+    alias cda="composer dump-autoload -o"
+    
+    # Rails Aliases
+    alias rc="rails console"
+    alias rd="rails destroy"
+    alias rdb="rails dbconsole"
+    alias rg="rails generate"
+    alias ru="rails generate migration"
+    alias rp="rails plugin"
+    alias ru="rails runner"
+    alias rs="rails server"
+    alias rsd="rails server --debugger"
+    
+    # Rake Aliases
+    alias rdm="rake db:migrate"
+    alias rdms="rake db:migrate:status"
+    alias rdr="rake db:rollback"
+    alias rdc="rake db:create"
+    alias rds="rake db:seed"
+    alias rdd="rake db:drop"
+    alias rdtc="rake db:test:clone"
+    alias rdtp="rake db:test:prepare"
+    alias rdmtc="rake db:migrate db:test:clone"
+    alias rlc="rake log:clear"
+    alias rn="rake notes"
+    alias rr="rake routes"
+    
+    # Bundler Aliases
+    alias bi="bundle install"
+    alias bu="bundle update"
