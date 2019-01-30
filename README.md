@@ -27,12 +27,12 @@ iTerm2 is way better than the default OSX terminal.
 ### 3. [Install oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) plugin
 
 Run the following command in the terminal to install it:
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+```sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"```
 
 ### 4. [Install powerlevel9k](https://github.com/bhilburn/powerlevel9k) theme for oh-my-zsh
 
 Run the following command in the terminal to install it:
-`git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k`
+```git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k```
 
 ### 5. [Install Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 
