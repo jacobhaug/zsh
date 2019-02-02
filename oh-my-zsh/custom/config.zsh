@@ -151,7 +151,7 @@
 #   NETWORKING
 #   ---------------------------
 
-    alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
+    alias myip='curl https://ip.encryption.io'          # myip:         Public facing IP Address
     alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
     alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
     alias lsock='sudo /usr/sbin/lsof -i -P'             # lsock:        Display open sockets
@@ -161,7 +161,9 @@
     alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on connections for en1
     alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
     alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
-    alias hosts='sudo vim /etc/hosts'
+    alias hosts='sudo vi /etc/hosts'
+    httpHeaders () { /usr/bin/curl -I -L $@ ; }         # httpHeaders:      Grabs headers from web page
+    httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }
 
 #   ii:  display useful host related informaton
 #   -------------------------------------------------------------------
@@ -173,7 +175,6 @@
         echo -e "\n${RED}Machine stats :$NC " ; uptime
         echo -e "\n${RED}Current network location :$NC " ; scselect
         echo -e "\n${RED}Public facing IP Address :$NC " ;myip
-        #echo -e "\n${RED}DNS Configuration:$NC " ; scutil --dns
         echo
     }
 
@@ -192,7 +193,31 @@
 #   ---------------------------------------
     alias root='sudo su -'
     alias suroot='sudo -E -s'
+    alias server='cd /home/deploy/server'
+    alias xhosts='sudo vi /etc/hosts'
     unalias gcp
+	
+	# Nginx Aliases
+    alias xcd='cd /etc/nginx/'
+    alias xsites='cd /etc/nginx/conf.d'
+    alias xedit='sudo vi /etc/nginx/nginx.conf'
+    alias xrr='sudo systemctl restart nginx'
+    alias xrestart='sudo systemctl restart nginx'
+    alias xreload='sudo systemctl reload nginx'
+    alias xstop='sudo systemctl stop nginx'
+    alias xstart='sudo systemctl start nginx'
+    alias xlogs='cd /var/log/nginx/'
+	alias fxlogs='tail -f /var/log/nginx/error.log'
+		
+	# PHP Aliases
+    alias rphp='sudo systemctl restart php7.2-fpm.service'
+    alias pstop='sudo systemctl stop php7.2-fpm.service'
+    alias pstart='sudo systemctl start php7.2-fpm.service'
+	
+	# MySQL Aliases
+    alias myrestart='sudo systemctl restart mysql'
+    alias mystop='sudo systemctl stop mysql'
+    alias mystart='sudo systemctl start mysql'
     
     # SSL Management
     certinfo () { openssl x509 -in "$1" -noout -text; }

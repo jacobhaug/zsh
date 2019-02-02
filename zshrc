@@ -50,3 +50,5 @@ alias suroot='sudo -E -s'
 
 # Sourcing Path
 source $ZSH/custom/path.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
