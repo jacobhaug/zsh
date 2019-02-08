@@ -234,7 +234,7 @@
 #   ---------------------------------------
 
     # General
-    alias sshcopy='pbcopy ~/.ssh/keys/id_ed25519.pub'
+    alias sshcopy='pbcopy < ~/.ssh/keys/id_ed25519.pub'
     alias code='cd "~/Code"'
     pms () { gaa && gcmsg "pms" && gp; }
     gpe () { git commit --allow-empty -m "Trigger push"; }
