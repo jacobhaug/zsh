@@ -1,11 +1,8 @@
-# Google Cloud
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Node / Composer / RVM
 #export PATH="/usr/local/bin:/usr/local/sbin:/Users/jacob/.npm-global/bin:/Users/jacob/.composer/vendor/bin:/Users/jacob/.rvm/bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:/Users/jacob/.composer/vendor/bin:/Users/jacob/.rvm/bin:$PATH"
-export NVM_DIR="$HOME/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
+#export NVM_DIR="$HOME/.nvm"
+#source "/usr/local/opt/nvm/nvm.sh"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jacob/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jacob/google-cloud-sdk/path.zsh.inc'; fi
