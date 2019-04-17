@@ -238,6 +238,7 @@
     alias code='cd "~/Code"'
     pms () { gaa && gcmsg "pms" && gp; }
     gpe () { git commit --allow-empty -m "Trigger push"; }
+    alias ap='ansible-playbook'
 
     # Brew Aliases
     alias brew:services="brew services list"
