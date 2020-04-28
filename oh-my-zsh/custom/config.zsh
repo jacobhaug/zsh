@@ -195,7 +195,6 @@
     alias suroot='sudo -E -s'
     alias server='cd /home/deploy/server'
     alias xhosts='sudo vi /etc/hosts'
-    unalias gcp
     
     # Ubuntu Aliases
     alias uu="sudo apt-get update && sudo apt-get upgrade"
@@ -235,7 +234,6 @@
 
     # General
     alias sshcopy='pbcopy < ~/.ssh/keys/id_ed25519.pub'
-    alias code='cd "~/Code"'
     pms () { gaa && gcmsg "pms" && gp; }
     gpe () { git commit --allow-empty -m "Trigger push"; }
     alias ap='ansible-playbook'
@@ -298,3 +296,6 @@
     # Bundler Aliases
     alias bi="bundle install"
     alias bu="bundle update"
+
+    # Yarn Aliases
+    alias ys="yarn && yarn start"
