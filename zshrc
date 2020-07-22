@@ -20,6 +20,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator
 POWERLEVEL9K_ROOT_ICON="\uF09C"
 #POWERLEVEL9K_SUDO_ICON=$'\uF09C' # 
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
+POWERLEVEL9K_DISABLE_GITSTATUS=true
 #POWERLEVEL9K_VCS_GIT_ICON='\uF408 '
 #POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uF408 '
 
@@ -56,3 +57,6 @@ alias suroot='sudo -E -s'
 
 # Sourcing Path
 source $ZSH/custom/path.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
